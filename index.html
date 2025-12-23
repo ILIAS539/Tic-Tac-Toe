@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Tic Tac Toe</title>
+    <meta name="theme-color" content="#6a11cb">
+    <title>Modern Tic Tac Toe PWA</title>
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogIlRpYyBUYWMgVG9lIiwKICAic2hvcnRfbmFtZSI6ICJUaWMgVGFjIFRvZSIsCiAgImRlc2NyaXB0aW9uIjogIkEgbW9kZXJuIFRpYyBUYWMgVG9lIGdhbWUgd2l0aCBBSSBwbGF5ZXJzIiwKICAic3RhcnRfdXJsIjogIi4vIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjNmExMWNiIiwKICAidGhlbWVfY29sb3IiOiAiIzZhMTFjYiIsCiAgImljb25zIjogWwogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIZHBaSFJvUFNJeE1EQWlJR2hsYVdkb2REMGlNVGtpSUhacFpYZENiM2c5SWpBZ01DQTFNREFnTURBd0lqNEtJQ0FnSUR4emRIbHNaVDRLUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIZHBaSFJvUFNJeE1EQWlJR2hsYVdkb2REMGlNVGtpSUhacFpYZENiM2c5SWpBZ01DQTFNREFnTURBd0lqNEtJQ0FnSUR4emRIbHNaVDRLUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIZHBaSFJvUFNJeE1EQWlJR2hsYVdkb2REMGlNVGtpSUhacFpYZENiM2c5SWpBZ01DQTFNREFnTURBd0lqNEtJQ0FnSUR4emRIbHNaVDRLUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIZHBaSFJvUFNJeE1EQWlJR2hsYVdkb2REMGlNVGtpSUhacFpYZENiM2c5SWpBZ01DQTFNREFnTURBd0lqNEtJQ0FnSUR4emRIbHNaVDRLUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIZHBaSFJvUFNJeE1EQWlJR2hsYVdkb2REMGlNVGtpSUhacFpYZENiM2c5SWpBZ01DQTFNREFnTURBd0lqNEtJQ0FnSUR4emRIbHNaVDRLUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIZHBaSFJvUFNJeE1EQWlJR2hsYVdkb2REMGlNVGtpSUhacFpYZENiM2c5SWpBZ01DQTFNREFnTURBd0lqNEtJQ0FnSUR4emRIbHNaVDRLUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIZHBaSFJvUFNJeE1EQWlJR2hsYVdkb2REMGlNVGtpSUhacFpYZENiM2c5SWpBZ01DQTFNREFnTURBd0lqNEtJQ0FnSUR4emRIbHNaVDRLUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIZHBaSFJvUFNJeE1EQWlJR2hsYVdkb2REMGlNVGtpSUhacFpYZENiM2c5SWpBZ01DQTFNREFnTURBd0lqNEtQQzl6ZG1jK0NpQWdJQ0E9IiwKICAgICAgInNpemVzIjogIjE5MngxOTIiLAogICAgICAidHlwZSI6ICJpbWFnZS9zdmcreG1sIgogICAgfSwKICAgIHsKICAgICAgInNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSGRwWkhSb1BTSXhNREFpSUdobGFXZG9kRDBpTVRraUlIWnBaWGRDYjNnOUlqQWdNQ0ExTURBZ01EQXdJajRLSUNBZ0lEeHpkSGxzWlQ0S1BITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSGRwWkhSb1BTSXhNREFpSUdobGFXZG9kRDBpTVRraUlIWnBaWGRDYjNnOUlqQWdNQ0ExTURBZ01EQXdJajRLSUNBZ0lEeHpkSGxzWlQ0S1BITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSGRwWkhSb1BTSXhNREFpSUdobGFXZG9kRDBpTVRraUlIWnBaWGRDYjNnOUlqQWdNQ0ExTURBZ01EQXdJajRLSUNBZ0lEeHpkSGxzWlQ0S1BITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSGRwWkhSb1BTSXhNREFpSUdobGFXZG9kRDBpTVRraUlIWnBaWGRDYjNnOUlqQWdNQ0ExTURBZ01EQXdJajRLSUNBZ0lEeHpkSGxzWlQ0S1BITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSGRwWkhSb1BTSXhNREFpSUdobGFXZG9kRDBpTVRraUlIWnBaWGRDYjNnOUlqQWdNQ0ExTURBZ01EQXdJajRLSUNBZ0lEeHpkSGxzWlQ0S1BITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSGRwWkhSb1BTSXhNREFpSUdobGFXZG9kRDBpTVRraUlIWnBaWGRDYjNnOUlqQWdNQ0ExTURBZ01EQXdJajRLSUNBZ0lEeHpkSGxzWlQ0S1BITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSGRwWkhSb1BTSXhNREFpSUdobGFXZG9kRDBpTVRraUlIWnBaWGRDYjNnOUlqQWdNQ0ExTURBZ01EQXdJajRLUEM5emRtYytDaUFnSUNBPSIsCiAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwKICAgICAgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIKICAgIH0KICBdCn0=">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❌⭕</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❌⭕</text></svg>">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -67,6 +75,20 @@
             font-size: 1.2rem;
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 20px;
+        }
+
+        .pwa-install-note {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 12px 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .pwa-install-note i {
+            margin-right: 8px;
         }
 
         .game-controls {
@@ -278,6 +300,46 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
+        .pwa-install-instructions {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .pwa-install-instructions h4 {
+            color: gold;
+            margin-bottom: 10px;
+        }
+
+        .pwa-install-instructions ol {
+            padding-left: 20px;
+        }
+
+        .pwa-install-instructions li {
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .pwa-status {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            background: var(--success-color);
+            color: white;
+        }
+
+        .pwa-status.unsupported {
+            background: var(--danger-color);
+        }
+
+        .pwa-status.installed {
+            background: var(--accent-color);
+        }
+
         footer {
             margin-top: 30px;
             text-align: center;
@@ -331,8 +393,11 @@
 <body>
     <div class="container">
         <header>
-            <h1><i class="fas fa-gamepad"></i> Tic Tac Toe</h1>
-            <p class="tagline">A modern twist on the classic game</p>
+            <h1><i class="fas fa-gamepad"></i> Tic Tac Toe <span id="pwa-status" class="pwa-status">PWA Ready</span></h1>
+            <p class="tagline">A modern twist on the classic game - Now installable as an app!</p>
+            <div class="pwa-install-note">
+                <i>📱</i> This game can be installed on your home screen like an app! Look for the "Add to Home Screen" option.
+            </div>
         </header>
         
         <div class="game-controls">
@@ -387,6 +452,19 @@
             <button class="btn btn-custom restart-btn" id="restart-game">
                 <i class="fas fa-redo-alt"></i> Restart Game
             </button>
+            <button class="btn btn-custom restart-btn" id="install-btn" style="display: none; margin-left: 10px;">
+                <i class="fas fa-download"></i> Install App
+            </button>
+        </div>
+
+        <div class="pwa-install-instructions">
+            <h4><i class="fas fa-mobile-alt"></i> Install on Home Screen</h4>
+            <ol>
+                <li><strong>Android/Chrome:</strong> Tap menu (⋮) → "Add to Home Screen" or "Install App"</li>
+                <li><strong>iOS/Safari:</strong> Tap share (□ with ↑) → "Add to Home Screen"</li>
+                <li><strong>Desktop:</strong> Look for the install icon in your browser's address bar</li>
+                <li>Launch like a regular app from your home screen!</li>
+            </ol>
         </div>
     </div>
     
@@ -402,10 +480,60 @@
     </div>
     
     <footer>
-        <p>Made by Olayinka<i class="fas fa-heart" style="color: #ff4d7e;"></i> | Tic Tac Toe 2026</p>
+        <p>Made by Olayinka<i class="fas fa-heart" style="color: #ff4d7e;"></i> | Tic Tac Toe PWA 2026 | Offline Ready</p>
     </footer>
 
     <script>
+        // Service Worker code as a string (will be registered as a blob)
+        const serviceWorkerCode = `
+            const CACHE_NAME = 'tic-tac-toe-pwa-v1';
+            const urlsToCache = [
+                './',
+                './index.html'
+            ];
+
+            // Install event: cache the essential files
+            self.addEventListener('install', event => {
+                event.waitUntil(
+                    caches.open(CACHE_NAME)
+                        .then(cache => {
+                            console.log('Opened cache');
+                            return cache.addAll(urlsToCache);
+                        })
+                );
+                self.skipWaiting();
+            });
+
+            // Fetch event: serve from cache if available, otherwise network
+            self.addEventListener('fetch', event => {
+                event.respondWith(
+                    caches.match(event.request)
+                        .then(response => {
+                            if (response) {
+                                return response;
+                            }
+                            return fetch(event.request);
+                        })
+                );
+            });
+
+            // Activate event: clean up old caches
+            self.addEventListener('activate', event => {
+                event.waitUntil(
+                    caches.keys().then(cacheNames => {
+                        return Promise.all(
+                            cacheNames.map(cacheName => {
+                                if (cacheName !== CACHE_NAME) {
+                                    return caches.delete(cacheName);
+                                }
+                            })
+                        );
+                    })
+                );
+                self.clients.claim();
+            });
+        `;
+
         document.addEventListener('DOMContentLoaded', function() {
             // Game state variables
             let currentPlayer = 'X';
@@ -414,6 +542,10 @@
             let gameMode = 'friends'; // 'friends' or 'ai'
             let difficulty = 'medium'; // 'easy', 'medium', 'impossible'
             let scores = { X: 0, O: 0 };
+            
+            // PWA variables
+            let deferredPrompt = null;
+            let isPWAInstalled = false;
             
             // Game elements
             const gameBoardElement = document.getElementById('game-board');
@@ -424,6 +556,8 @@
             const winnerTextElement = document.getElementById('winner-text');
             const gameResultMessageElement = document.getElementById('game-result-message');
             const difficultyContainer = document.getElementById('difficulty-container');
+            const installBtn = document.getElementById('install-btn');
+            const pwaStatus = document.getElementById('pwa-status');
             
             // Winning combinations
             const winningConditions = [
@@ -431,6 +565,13 @@
                 [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
                 [0, 4, 8], [2, 4, 6] // diagonals
             ];
+            
+            // Initialize the game
+            function initGame() {
+                initializeBoard();
+                setupPWA();
+                updateGameStatus();
+            }
             
             // Initialize the game board
             function initializeBoard() {
@@ -443,8 +584,6 @@
                     cell.addEventListener('click', () => cellClicked(i));
                     gameBoardElement.appendChild(cell);
                 }
-                
-                updateGameStatus();
             }
             
             // Handle cell click
@@ -734,6 +873,100 @@
                 restartGame();
             }
             
+            // ========== PWA FUNCTIONALITY ==========
+            
+            // Setup PWA features
+            function setupPWA() {
+                // Check if browser supports PWA features
+                if (!('serviceWorker' in navigator) || !('PushManager' in window)) {
+                    pwaStatus.textContent = "PWA Not Supported";
+                    pwaStatus.classList.add('unsupported');
+                    return;
+                }
+                
+                // Register service worker from blob
+                registerServiceWorker();
+                
+                // Check if app is already installed
+                checkIfPWAInstalled();
+                
+                // Listen for beforeinstallprompt event
+                window.addEventListener('beforeinstallprompt', (e) => {
+                    // Prevent the mini-infobar from appearing on mobile
+                    e.preventDefault();
+                    // Stash the event so it can be triggered later
+                    deferredPrompt = e;
+                    // Show the install button
+                    installBtn.style.display = 'inline-block';
+                    
+                    // Update status
+                    pwaStatus.textContent = "Install Available";
+                });
+                
+                // Listen for app installed event
+                window.addEventListener('appinstalled', () => {
+                    isPWAInstalled = true;
+                    installBtn.style.display = 'none';
+                    deferredPrompt = null;
+                    pwaStatus.textContent = "Installed";
+                    pwaStatus.classList.add('installed');
+                });
+            }
+            
+            // Register service worker from blob
+            function registerServiceWorker() {
+                try {
+                    // Create a blob from the service worker code
+                    const blob = new Blob([serviceWorkerCode], { type: 'application/javascript' });
+                    const swUrl = URL.createObjectURL(blob);
+                    
+                    // Register the service worker
+                    navigator.serviceWorker.register(swUrl)
+                        .then(registration => {
+                            console.log('Service Worker registered with scope:', registration.scope);
+                        })
+                        .catch(error => {
+                            console.error('Service Worker registration failed:', error);
+                            pwaStatus.textContent = "SW Failed";
+                            pwaStatus.classList.add('unsupported');
+                        });
+                } catch (error) {
+                    console.error('Service Worker creation failed:', error);
+                }
+            }
+            
+            // Check if PWA is already installed
+            function checkIfPWAInstalled() {
+                if (window.matchMedia('(display-mode: standalone)').matches || 
+                    window.navigator.standalone === true) {
+                    isPWAInstalled = true;
+                    installBtn.style.display = 'none';
+                    pwaStatus.textContent = "Running as App";
+                    pwaStatus.classList.add('installed');
+                }
+            }
+            
+            // Handle install button click
+            function handleInstallClick() {
+                if (!deferredPrompt) return;
+                
+                // Show the install prompt
+                deferredPrompt.prompt();
+                
+                // Wait for the user to respond to the prompt
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    } else {
+                        console.log('User dismissed the install prompt');
+                    }
+                    deferredPrompt = null;
+                    installBtn.style.display = 'none';
+                });
+            }
+            
+            // ========== EVENT LISTENERS ==========
+            
             // Event listeners for game mode buttons
             document.getElementById('mode-friends').addEventListener('click', function() {
                 document.getElementById('mode-friends').classList.add('active');
@@ -773,8 +1006,11 @@
             document.getElementById('restart-game').addEventListener('click', restartGame);
             document.getElementById('modal-restart').addEventListener('click', restartGame);
             
+            // Event listener for install button
+            installBtn.addEventListener('click', handleInstallClick);
+            
             // Initialize the game
-            initializeBoard();
+            initGame();
             
             // Initially hide AI difficulty when in friends mode
             difficultyContainer.style.opacity = '0.5';
